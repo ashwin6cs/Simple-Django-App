@@ -1,0 +1,37 @@
+
+{% extends 'base.html' %}
+{% block body %}
+<center>
+<form class="form-inline"  action="create" method="POST">
+    {% csrf_token %}
+    <div class="form-group">
+        <label for="firstname"><b>Firstname</b></label>
+        <input type="text" name="firstname" class="form-control" style="width:30%;" required="required"/>
+        <label for="lastname"><b>Lastname</b></label>
+        <input type="text" name="lastname" class="form-control" style="width:30%;" required="required"/>
+        <button type="submit" class="btn btn-sm btn-primary"><span class="glyphicon glyphicon-plus"></span> ADD</button>
+    </div>
+</form>
+<br />
+<table class="table table-bordered" style="width:70%">
+    <thead class="alert-warning" >
+        <tr >
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for member in members %}
+        <tr>
+            <td>{{ member.firstname }}</td>
+            <td>{{ member.lastname }}</td>
+            <td><center><a  href="edit/{{ member.id }}" style="color:rgb(0, 132, 255);background-color:yellow"><b> Change Order </b> </a> <a class="btn btn-sm btn-danger" href="delete/{{ member.id }}" style="color:rgb(3, 32, 59);background-color:rgb(255, 81, 0)"><span class="glyphicon glyphicon-trash"></span><b> Cancel Order </b></a></center></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</center>
+{% endblock %}
+
+

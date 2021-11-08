@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        table, th, td {
+          border: 1px solid white;
+          border-collapse: collapse;
+        }
+        th {
+          background-color:aqua;
+          padding: 15px;
+        }
+        td {
+          background-color:aquamarine;
+          padding: 15px;
+        }
+        input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  background-color:rgb(66, 226, 226);
+  color: white;
+}
+input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+        </style>
+</head>
+<body>
+    <center>
+    
+    <div class="col-md-3"></div>
+    <div class="col-md-6 well">
+        <h3 class="text-primary" style="background-color:aqua;color:rgb(226, 13, 13);width: 500px;height: 50px;"><b>Food Order Processing Application </b></h3> 
+        <hr style="border-top:1px dotted #ccc;"/>
+        {% block body %}
+ 
+        {% endblock %}
+    </div>
+</center>
+</body>
+</html>
